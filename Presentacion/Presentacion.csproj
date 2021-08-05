@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -49,6 +67,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anulacion_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anulacion_compra.Designer.cs">
+      <DependentUpon>Anulacion_compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anulacion_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anulacion_factura.Designer.cs">
+      <DependentUpon>Anulacion_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categoria.Designer.cs">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra_Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra_Factura.Designer.cs">
+      <DependentUpon>Compra_Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_Compras_Factura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datos_Compras_Factura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_factura.cs">
+      <DependentUpon>Datos_factura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_factura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Datos_factura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalle_Compra.Designer.cs">
+      <DependentUpon>Detalle_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalle_Factura.Designer.cs">
+      <DependentUpon>Detalle_Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados.Designer.cs">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura_Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura_Reporte.Designer.cs">
+      <DependentUpon>Factura_Reporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,13 +158,184 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mi_perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mi_perfil.Designer.cs">
+      <DependentUpon>Mi_perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_categoria.Designer.cs">
+      <DependentUpon>Operacion_categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_cliente.Designer.cs">
+      <DependentUpon>Operacion_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_empleado.Designer.cs">
+      <DependentUpon>Operacion_empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_nueva_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_nueva_Compra.Designer.cs">
+      <DependentUpon>Operacion_nueva_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_nueva_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_nueva_factura.Designer.cs">
+      <DependentUpon>Operacion_nueva_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_producto.Designer.cs">
+      <DependentUpon>Operacion_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_proveedor.Designer.cs">
+      <DependentUpon>Operacion_proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_Usuario_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_Usuario_Editar.Designer.cs">
+      <DependentUpon>Operacion_Usuario_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacion_Usuario_Insertar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacion_Usuario_Insertar.Designer.cs">
+      <DependentUpon>Operacion_Usuario_Insertar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tasa_cambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tasa_cambio.Designer.cs">
+      <DependentUpon>Tasa_cambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ver_detalle_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ver_detalle_compra.Designer.cs">
+      <DependentUpon>Ver_detalle_compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ver_detalle_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ver_detalle_factura.Designer.cs">
+      <DependentUpon>Ver_detalle_factura.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Anulacion_compra.resx">
+      <DependentUpon>Anulacion_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anulacion_factura.resx">
+      <DependentUpon>Anulacion_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categoria.resx">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra_Factura.resx">
+      <DependentUpon>Compra_Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalle_Compra.resx">
+      <DependentUpon>Detalle_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalle_Factura.resx">
+      <DependentUpon>Detalle_Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados.resx">
+      <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura_Reporte.resx">
+      <DependentUpon>Factura_Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario_Principal.resx">
       <DependentUpon>Formulario_Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informe.rdlc" />
+    <EmbeddedResource Include="Informe_Compras.rdlc" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mi_perfil.resx">
+      <DependentUpon>Mi_perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_categoria.resx">
+      <DependentUpon>Operacion_categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_cliente.resx">
+      <DependentUpon>Operacion_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_empleado.resx">
+      <DependentUpon>Operacion_empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_nueva_Compra.resx">
+      <DependentUpon>Operacion_nueva_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_nueva_factura.resx">
+      <DependentUpon>Operacion_nueva_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_producto.resx">
+      <DependentUpon>Operacion_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_proveedor.resx">
+      <DependentUpon>Operacion_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_Usuario_Editar.resx">
+      <DependentUpon>Operacion_Usuario_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacion_Usuario_Insertar.resx">
+      <DependentUpon>Operacion_Usuario_Insertar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,7 +345,50 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasa_cambio.resx">
+      <DependentUpon>Tasa_cambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ver_detalle_compra.resx">
+      <DependentUpon>Ver_detalle_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ver_detalle_factura.resx">
+      <DependentUpon>Ver_detalle_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Datos_Compras_Factura.xsc">
+      <DependentUpon>Datos_Compras_Factura.xsd</DependentUpon>
+    </None>
+    <None Include="Datos_Compras_Factura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Datos_Compras_Factura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos_Compras_Factura.xss">
+      <DependentUpon>Datos_Compras_Factura.xsd</DependentUpon>
+    </None>
+    <None Include="Datos_factura.xsc">
+      <DependentUpon>Datos_factura.xsd</DependentUpon>
+    </None>
+    <None Include="Datos_factura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Datos_factura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos_factura.xss">
+      <DependentUpon>Datos_factura.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,10 +403,40 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{82d9809a-8c9e-43c5-aec8-97cb88fd9817}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{d840b429-d8bf-49cd-9af9-479723cda1ad}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir-blanco-login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimizar-blanco-login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar.png" />
+    <None Include="Resources\ojo_detalle.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

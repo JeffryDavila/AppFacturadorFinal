@@ -7,36 +7,70 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using System.Runtime.InteropServices;
+using Common.Cache;
 
 namespace Presentacion
 {
     public partial class Login : Form
     {
-        Formulario_Principal logueo;
-
         public Login()
         {
             InitializeComponent();
         }
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsq, int wparam, int lparam);
+
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            if (textusuario.Text != "USERNAME")
+            if (textusuario.Text != "USUARIO")
             {
                 if (textcontra.Text != "CONTRASEÑA")
                 {
-
+                    UserModel user = new UserModel();
+                    var validlogin = user.LoginUser(textusuario.Text,textcontra.Text);
+                    if (validlogin == true)
+                    {
+                        Formulario_Principal MainMenu = new Formulario_Principal();
+                        Tasa_cambio cambio_tasa = new Tasa_cambio();
+                        MainMenu.Show();
+                        MainMenu.FormClosed += Logout;
+                        this.Hide();
+                        cambio_tasa.ShowDialog();
+                    }
+                    else
+                    {
+                        msgError("Usuario o Contraseña Incorrecta. \n Intentelo de nuevo.");
+                        textcontra.Text = "CONTRASEÑA";
+                        textcontra.UseSystemPasswordChar = false;
+                        textusuario.Focus();
+                
+                    }
                 }
-                else msgError("Please enter Password");
+                else msgError("Por Favor ingrese la contraseña.");
             }
-            else msgError("Please enter username");
+            else msgError("Por Favor ingrese el nombre Usuario.");
 
         }
 
         private void msgError(string msg)
         {
-            lblErrorMessage.Text = " " + msg;
+            lblErrorMessage.Text = "   " + msg;
             lblErrorMessage.Visible = true;
+        }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            textcontra.Text = "CONTRASEÑA";
+            textcontra.UseSystemPasswordChar = false;
+            textusuario.Text="USUARIO";
+            lblErrorMessage.Visible = false;
+            this.Show();
+            //textusuario.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -100,6 +134,22 @@ namespace Presentacion
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

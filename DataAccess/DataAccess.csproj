@@ -41,9 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaData.cs" />
+    <Compile Include="ClientesData.cs" />
+    <Compile Include="ComprasData.cs" />
+    <Compile Include="Compra_stock.cs" />
     <Compile Include="ConnectionToSql.cs" />
+    <Compile Include="EmpleadosData.cs" />
+    <Compile Include="FacturaData.cs" />
+    <Compile Include="Factura_stock.cs" />
+    <Compile Include="ProductosData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorData.cs" />
     <Compile Include="UserData.cs" />
+    <Compile Include="UsuarioData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{82d9809a-8c9e-43c5-aec8-97cb88fd9817}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
