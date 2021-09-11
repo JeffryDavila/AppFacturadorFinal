@@ -42,6 +42,7 @@ namespace Presentacion
             textEmail.Text = CompraCache.email;
             textDireccion.Text = CompraCache.direccion;
             lblEstado.Text = CompraCache.estado;
+
             if (CompraCache.estado=="Anulada")
             {
                 lblEstado.ForeColor = Color.Red;

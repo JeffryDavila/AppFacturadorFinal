@@ -194,6 +194,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Operacion_Usuario_Editar";
             this.Load += new System.EventHandler(this.Operacion_Usuario_Editar_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Operacion_Usuario_Editar_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

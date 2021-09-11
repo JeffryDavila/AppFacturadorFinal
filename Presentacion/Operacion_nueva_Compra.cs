@@ -113,6 +113,7 @@ namespace Presentacion
             ventana.btnUsuario.Enabled = false;
             ventana.btnDatos_user.Enabled = false;
             ventana.btn_tasacambio.Enabled = false;
+            ventana.iconcerrar.Enabled = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

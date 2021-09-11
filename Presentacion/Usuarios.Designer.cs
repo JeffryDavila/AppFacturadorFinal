@@ -47,8 +47,8 @@
             // 
             // Lista_de_usuario
             // 
-            this.Lista_de_usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Lista_de_usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lista_de_usuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Lista_de_usuario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Lista_de_usuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
@@ -66,7 +66,7 @@
             this.Lista_de_usuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Lista_de_usuario.EnableHeadersVisualStyles = false;
             this.Lista_de_usuario.GridColor = System.Drawing.Color.DarkCyan;
-            this.Lista_de_usuario.Location = new System.Drawing.Point(22, 105);
+            this.Lista_de_usuario.Location = new System.Drawing.Point(22, 135);
             this.Lista_de_usuario.Name = "Lista_de_usuario";
             this.Lista_de_usuario.ReadOnly = true;
             this.Lista_de_usuario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -84,7 +84,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.Lista_de_usuario.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.Lista_de_usuario.Size = new System.Drawing.Size(669, 369);
+            this.Lista_de_usuario.Size = new System.Drawing.Size(941, 312);
             this.Lista_de_usuario.TabIndex = 5;
             // 
             // label1
@@ -105,7 +105,7 @@
             this.Encabezado_listacliente.AutoSize = true;
             this.Encabezado_listacliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Encabezado_listacliente.ForeColor = System.Drawing.Color.White;
-            this.Encabezado_listacliente.Location = new System.Drawing.Point(22, 78);
+            this.Encabezado_listacliente.Location = new System.Drawing.Point(22, 108);
             this.Encabezado_listacliente.Name = "Encabezado_listacliente";
             this.Encabezado_listacliente.Size = new System.Drawing.Size(152, 24);
             this.Encabezado_listacliente.TabIndex = 26;
@@ -135,7 +135,7 @@
             this.btnCerrarInferior.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnCerrarInferior.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCerrarInferior.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarInferior.Location = new System.Drawing.Point(765, 471);
+            this.btnCerrarInferior.Location = new System.Drawing.Point(776, 462);
             this.btnCerrarInferior.Name = "btnCerrarInferior";
             this.btnCerrarInferior.Size = new System.Drawing.Size(187, 36);
             this.btnCerrarInferior.TabIndex = 34;
@@ -149,9 +149,9 @@
             this.rectangleShape1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rectangleShape1.BorderColor = System.Drawing.Color.White;
             this.rectangleShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.rectangleShape1.Location = new System.Drawing.Point(703, 116);
+            this.rectangleShape1.Location = new System.Drawing.Point(464, 63);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(225, 194);
+            this.rectangleShape1.Size = new System.Drawing.Size(497, 63);
             // 
             // shapeContainer1
             // 
@@ -160,7 +160,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(996, 532);
+            this.shapeContainer1.Size = new System.Drawing.Size(996, 511);
             this.shapeContainer1.TabIndex = 36;
             this.shapeContainer1.TabStop = false;
             // 
@@ -170,7 +170,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(771, 106);
+            this.label4.Location = new System.Drawing.Point(676, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 40;
@@ -186,7 +186,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(742, 238);
+            this.btnEliminar.Location = new System.Drawing.Point(796, 78);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(154, 36);
             this.btnEliminar.TabIndex = 39;
@@ -204,7 +204,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEditar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(742, 192);
+            this.btnEditar.Location = new System.Drawing.Point(636, 78);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(154, 36);
             this.btnEditar.TabIndex = 38;
@@ -222,7 +222,7 @@
             this.btnNuevoUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnNuevoUsuario.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(742, 146);
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(476, 78);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
             this.btnNuevoUsuario.Size = new System.Drawing.Size(154, 36);
             this.btnNuevoUsuario.TabIndex = 37;
@@ -235,7 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(996, 532);
+            this.ClientSize = new System.Drawing.Size(996, 511);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);

@@ -139,6 +139,7 @@
             this.Name = "Anulacion_factura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anulacion_factura";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Anulacion_factura_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

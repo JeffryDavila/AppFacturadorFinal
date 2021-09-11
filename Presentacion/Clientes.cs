@@ -126,5 +126,15 @@ namespace Presentacion
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Encabezado_listacliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

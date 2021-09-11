@@ -66,14 +66,17 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "Datos_de_compra";
             reportDataSource1.Value = this.Listar_compra_completaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Informe_Compras.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(90, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(95, 11);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(793, 513);
+            this.reportViewer1.Size = new System.Drawing.Size(791, 508);
             this.reportViewer1.TabIndex = 31;
             // 
             // Listar_compra_completaTableAdapter
@@ -84,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 537);
+            this.ClientSize = new System.Drawing.Size(985, 532);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.brnCerrarSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

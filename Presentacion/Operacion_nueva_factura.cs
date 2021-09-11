@@ -122,6 +122,7 @@ namespace Presentacion
             ventana.btnUsuario.Enabled = false;
             ventana.btnDatos_user.Enabled = false;
             ventana.btn_tasacambio.Enabled = false;
+            ventana.iconcerrar.Enabled = false;
         }
 
         public void obtener_id_factura()

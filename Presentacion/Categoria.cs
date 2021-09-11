@@ -96,7 +96,7 @@ namespace Presentacion
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("No se puede eliminar por que la categoria seleccionado esta ligado alguna producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se puede eliminar por que la categoria seleccionado esta ligado algun producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }

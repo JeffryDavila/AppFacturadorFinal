@@ -128,6 +128,12 @@ namespace Domain
             return factura.Listar_Producto_especificos();
         }
 
+        public DataTable Lista_de_producto_x_codigo(string codigo)
+        {
+            factura.Codigo_busqueda = codigo;
+            return factura.Listar_Producto_x_codigo();
+        }
+
         public void Eliminar_Detalle_Factura(int iddetallefactura)
         {
             factura.Idetallefactura = iddetallefactura;
@@ -169,6 +175,13 @@ namespace Domain
         {
             factura.Id_articulo_nombre = idarticulo;
             factura.Mostra_nombre_articulo();
+        }
+
+
+        //Limpiar nombre cliente varios
+        public void Limpiar_nombre_temporal()
+        {
+            factura.Limpiar_Nombre_Temporal();
         }
 
         //Factura completa-----------------------------------------------

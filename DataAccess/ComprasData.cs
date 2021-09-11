@@ -26,6 +26,7 @@ namespace DataAccess
 
         private string nombreproveedor;
         private string descripcion_busqueda;
+        private string codigo_busqueda;
 
         //ATRIBUTOS LINEA COMPRAS
         private int idlineapedido;
@@ -155,7 +156,12 @@ namespace DataAccess
             get => fecha_F;
             set => fecha_F = value;
         }
-
+        public string Codigo_busqueda
+        {
+            get => codigo_busqueda;
+            set => codigo_busqueda = value;
+        }
+       
         public int obtener_idcompra()
         {
             int aux = 0;
@@ -342,8 +348,8 @@ namespace DataAccess
                     command.Connection = connection;
                     command.CommandText = "select tbl_pedido.idpedido, tbl_pedido.idlpedido, tbl_pedido.fechapedido,tbl_pedido.tipo_cambio, tbl_proveedor.nombreproveedor," +
                     "tbl_proveedor.telefono, tbl_proveedor.email,tbl_proveedor.direccion, tbl_pedido.estado, tbl_pedido.motivo, tbl_pedido.subtotal, tbl_pedido.total " +
-                    "from tbl_pedido inner join tbl_lineapedido on tbl_pedido.idpedido=tbl_lineapedido.idpedido inner join tbl_proveedor on tbl_pedido.idproveedor = tbl_proveedor.idproveedor " +
-                    "inner join tbl_producto on tbl_lineapedido.idarticulo = tbl_producto.idarticulo where tbl_pedido.idpedido = @idpedido;";
+                    "from tbl_pedido inner join tbl_proveedor on tbl_pedido.idproveedor = tbl_proveedor.idproveedor " +
+                    "where tbl_pedido.idpedido = @idpedido;";
                     command.Parameters.AddWithValue("@idpedido", idpedido);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
@@ -501,6 +507,29 @@ namespace DataAccess
                     command.CommandText = "listarProducto_Factura_especifico";
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@descripcion", descripcion_busqueda);
+                    LeerFilas = command.ExecuteReader();
+                    Tabla.Load(LeerFilas);
+                    LeerFilas.Close();
+                }
+                connection.Close();
+                return Tabla;
+
+            }
+        }
+
+        //Reutilizando codigo para mostrar producto especifico x codigo de producto
+        public DataTable Listar_Producto_x_codigo()
+        {
+            DataTable Tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "listarProducto_Factura_x_codigo";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@codigo", codigo_busqueda);
                     LeerFilas = command.ExecuteReader();
                     Tabla.Load(LeerFilas);
                     LeerFilas.Close();

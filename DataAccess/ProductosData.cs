@@ -20,7 +20,9 @@ namespace DataAccess
         private decimal precio;
         private decimal precioPromo;
 
+        private string codigo_busqueda;
         private string descripcion_busqueda;
+        private int idcategoria_busqueda;
 
         public int Idproducto
         {
@@ -56,6 +58,16 @@ namespace DataAccess
         {
             get => precioPromo;
             set => precioPromo = value;
+        }
+        public string Codigo_busqueda
+        {
+            get => codigo_busqueda;
+            set => codigo_busqueda = value;
+        }
+        public int Idcategoria_busqueda
+        {
+            get => idcategoria_busqueda;
+            set => idcategoria_busqueda = value;
         }
 
         //Funcion para listar productos
@@ -164,6 +176,7 @@ namespace DataAccess
             }
         }
 
+        //Listar productos por nombre
         public DataTable ListarProducto_especificos()
         {
             DataTable Tabla = new DataTable();
@@ -176,6 +189,52 @@ namespace DataAccess
                     command.CommandText = "Listar_Producto_especifico";
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@descripcion", descripcion_busqueda);
+                    LeerFilas = command.ExecuteReader();
+                    Tabla.Load(LeerFilas);
+                    LeerFilas.Close();
+                }
+                connection.Close();
+                return Tabla;
+
+            }
+        }
+
+        //Listar productos por codigo
+        public DataTable ListarProducto_x_codigo()
+        {
+            DataTable Tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Listar_Producto_x_codigo";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@codigo", codigo_busqueda);
+                    LeerFilas = command.ExecuteReader();
+                    Tabla.Load(LeerFilas);
+                    LeerFilas.Close();
+                }
+                connection.Close();
+                return Tabla;
+
+            }
+        }
+
+        //Listar productos por categoria
+        public DataTable ListarProducto_x_categoria()
+        {
+            DataTable Tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Listar_producto_x_categoria";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idcategoria", Idcategoria_busqueda);
                     LeerFilas = command.ExecuteReader();
                     Tabla.Load(LeerFilas);
                     LeerFilas.Close();

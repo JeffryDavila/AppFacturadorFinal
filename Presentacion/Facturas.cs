@@ -20,6 +20,13 @@ namespace Presentacion
         public DateTime Fecha_selecionada;
 
         FacturaModel facturas = new FacturaModel();
+
+        //variable para almacenar el nombre cliente
+        string aux_nombre_cliente;
+
+        //variable para almacenar estados de factura
+        string aux_estado;
+
         public Facturas()
         {
             InitializeComponent();
@@ -192,5 +199,44 @@ namespace Presentacion
             Console.WriteLine(Fecha_selecionada); 
             ListarDetalleFactura_Fecha(Convert.ToString(Fecha_selecionada.ToString("dd/MM/yyyy")));
         }
+
+        private void btn_vista_imprimir_Click(object sender, EventArgs e)
+        {
+            if (Lista_de_Facturas.SelectedRows.Count > 0)
+            {
+                idfactura = Convert.ToInt32(Lista_de_Facturas.CurrentRow.Cells["ID"].Value.ToString());
+                aux_estado = Lista_de_Facturas.CurrentRow.Cells["Estado"].Value.ToString();
+                if (aux_estado == "Facturada")
+                {
+                    aux_nombre_cliente = Lista_de_Facturas.CurrentRow.Cells["Cliente"].Value.ToString();
+                    if (aux_nombre_cliente == "CLIENTES VARIOS")
+                    {
+                        facturas.Limpiar_nombre_temporal();
+                    }
+                    //Formulario_Principal ventana = Owner as Formulario_Principal;
+                    Factura_Reporte hoja = new Factura_Reporte();
+
+                    DataTable dt = facturas.Listar_Factura_completa(idfactura);
+                    DataSet ds = new DataSet();
+                    ds.Tables.Add(dt);
+                    hoja.reportViewer1.LocalReport.DataSources[0].Value = ds.Tables[0];
+                    hoja.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;//todo el ancho de pagina
+                    hoja.ShowDialog();
+                    //ventana.AbrirFormPanel(hoja);
+                }
+                else
+                {
+                    MessageBox.Show("Solo se puede mostrar la vista impresion de las facturadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+
     }
 }

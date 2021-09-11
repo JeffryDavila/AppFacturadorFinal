@@ -49,7 +49,7 @@
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_submenu = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).BeginInit();
             this.SuspendLayout();
             // 
@@ -282,18 +282,18 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Contraseña";
             // 
-            // label3
+            // lbl_submenu
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbl_submenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(120, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Usuario";
+            this.lbl_submenu.AutoSize = true;
+            this.lbl_submenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_submenu.ForeColor = System.Drawing.Color.Black;
+            this.lbl_submenu.Location = new System.Drawing.Point(120, 24);
+            this.lbl_submenu.Name = "lbl_submenu";
+            this.lbl_submenu.Size = new System.Drawing.Size(64, 20);
+            this.lbl_submenu.TabIndex = 37;
+            this.lbl_submenu.Text = "Usuario";
             // 
             // Operacion_Usuario_Insertar
             // 
@@ -303,7 +303,7 @@
             this.ClientSize = new System.Drawing.Size(359, 356);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_submenu);
             this.Controls.Add(this.cmbEmpleado);
             this.Controls.Add(this.cmbPrivilegio);
             this.Controls.Add(this.btnGuardar);
@@ -327,6 +327,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Operacion_Usuario_Insertar";
             this.Load += new System.EventHandler(this.Operacion_Usuario_Insertar_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Operacion_Usuario_Insertar_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -355,6 +356,6 @@
         public System.Windows.Forms.ComboBox cmbEmpleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lbl_submenu;
     }
 }

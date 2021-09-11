@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
     public partial class Operacion_cliente : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsq, int wparam, int lparam);
+
         ClienteModel objcliente = new ClienteModel();
         public string Operacion = "Insertar";
         public string idclient;
@@ -71,6 +77,18 @@ namespace Presentacion
             }
         }
 
+        private bool campos_vacios_editar()
+        {
+            if (textNombre.Text == "" || textApellido.Text == "" || textEdad.Text == "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void verificar_campos_opcionales()
         {
             if(textEdad.Text == "")
@@ -98,7 +116,7 @@ namespace Presentacion
             }
             else if(Operacion == "Editar")
             {
-                if (!campos_vacios())
+                if (!campos_vacios_editar())
                 {
                     objcliente.Editar_Cliente(Convert.ToInt32(idclient), textCedula.Text, textNombre.Text, textApellido.Text, Convert.ToInt32(textEdad.Text));
                     MessageBox.Show("Se edito correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -120,5 +138,10 @@ namespace Presentacion
             textCodigo.Text = cadena + "" + Convert.ToString(sumador);
         }
 
+        private void Operacion_cliente_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

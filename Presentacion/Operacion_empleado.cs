@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
     public partial class Operacion_empleado : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsq, int wparam, int lparam);
+
         EmpleadoModel objEmpleado = new EmpleadoModel();
         public string Operacion = "Insertar";
         public string idempleado;
@@ -106,6 +112,12 @@ namespace Presentacion
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void Operacion_empleado_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

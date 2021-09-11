@@ -73,6 +73,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ICONO_DAV96 {
+            get {
+                object obj = ResourceManager.GetObject("ICONO_DAV96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap medicamento {
             get {
                 object obj = ResourceManager.GetObject("medicamento", resourceCulture);

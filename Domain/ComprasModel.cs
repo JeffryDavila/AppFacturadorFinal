@@ -29,6 +29,12 @@ namespace Domain
             return compras.ListarproveedorCompra_especificos();
         }
 
+        public DataTable Lista_de_proveedor_x_codigo(string codigo)
+        {
+            compras.Codigo_busqueda = codigo;
+            return compras.Listar_Producto_x_codigo();
+        }
+
         public void Agregar_compra(string codigo, string fecha, int idproveedor, string estado)
         {
             compras.Codigopedido = codigo;

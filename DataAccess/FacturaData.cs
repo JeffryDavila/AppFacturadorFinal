@@ -41,6 +41,7 @@ namespace DataAccess
         private int idarticulo_llaveforanea;
 
         private string descripcion_busqueda;
+        private string codigo_busqueda;
 
         //Lista para obtener la cantidad de productos en las facturas
         public List<Factura_stock> list_producto = new List<Factura_stock>();
@@ -182,8 +183,11 @@ namespace DataAccess
             get => id_articulo_nombre;
             set => id_articulo_nombre = value;
         }
-
-
+        public string Codigo_busqueda
+        {
+            get => codigo_busqueda;
+            set => codigo_busqueda = value;
+        }
 
         //-----FUNCIONES FACTURA-----------------------------------------
 
@@ -387,8 +391,8 @@ namespace DataAccess
                     command.Connection = connection;
                     command.CommandText = "select tbl_factura.idfactura,tbl_factura.idlfactura,tbl_factura.fechafactura,(tbl_empleado.nombreempleado+' '+tbl_empleado.apellidoempleado) as empleado,"+
                     "(tbl_cliente.nombre + ' ' + tbl_cliente.apellido) as cliente,tbl_factura.tipo_cambio,tbl_factura.estado,tbl_factura.motivo,tbl_factura.pago,tbl_factura.vuelto," +
-                    "tbl_factura.subtotal,tbl_factura.total from tbl_factura inner join tbl_detallefactura on tbl_factura.idfactura = tbl_detallefactura.idfactura inner join tbl_producto "+
-                    "on tbl_detallefactura.idarticulo = tbl_producto.idarticulo inner join tbl_empleado on tbl_factura.idempleado = tbl_empleado.idempleado inner join tbl_cliente on " +
+                    "tbl_factura.subtotal,tbl_factura.total from tbl_factura "+
+                    "inner join tbl_empleado on tbl_factura.idempleado = tbl_empleado.idempleado inner join tbl_cliente on " +
                     "tbl_factura.idcliente = tbl_cliente.idcliente where tbl_factura.idfactura = @idfactura;";
                     command.Parameters.AddWithValue("@idfactura", idfactura);
                     command.CommandType = CommandType.Text;
@@ -628,6 +632,28 @@ namespace DataAccess
             }
         }
 
+        public DataTable Listar_Producto_x_codigo()
+        {
+            DataTable Tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "listarProducto_Factura_x_codigo";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@codigo", codigo_busqueda);
+                    LeerFilas = command.ExecuteReader();
+                    Tabla.Load(LeerFilas);
+                    LeerFilas.Close();
+                }
+                connection.Close();
+                return Tabla;
+
+            }
+        }
+
         public void EliminarDetalleFactura()
         {
             using (var connection = GetConnection())
@@ -735,6 +761,24 @@ namespace DataAccess
 
                     }
                 }
+            }
+        }
+
+        //Limpiar nombre del cliente varios
+        public void Limpiar_Nombre_Temporal()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Limpiar_nombre_temporal";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                }
+                connection.Close();
             }
         }
 

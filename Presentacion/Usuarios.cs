@@ -43,7 +43,7 @@ namespace Presentacion
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
             Operacion_Usuario_Insertar frm = new Operacion_Usuario_Insertar();
-            frm.lblSubMenu.Text = "Nuevo Usuario";
+            frm.lbl_submenu.Text = "Nuevo Usuario";
             frm.ListarEmpleado();
             frm.cmbPrivilegio.SelectedIndex = 1;
             frm.ShowDialog();

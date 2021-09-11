@@ -60,10 +60,10 @@
             reportDataSource1.Value = this.Listar_Factura_completaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Informe.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(175, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(98, 11);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(685, 508);
+            this.reportViewer1.Size = new System.Drawing.Size(772, 508);
             this.reportViewer1.TabIndex = 0;
             // 
             // brnCerrarSuperior
@@ -93,8 +93,10 @@
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Factura_Reporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura_Reporte";
             this.Load += new System.EventHandler(this.Factura_Reporte_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Factura_Reporte_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.Listar_Factura_completaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_factura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).EndInit();

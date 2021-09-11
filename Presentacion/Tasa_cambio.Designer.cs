@@ -140,6 +140,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tasa_cambio";
             this.Load += new System.EventHandler(this.Tasa_cambio_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tasa_cambio_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSuperior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

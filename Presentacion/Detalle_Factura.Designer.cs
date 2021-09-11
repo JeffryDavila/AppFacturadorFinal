@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detalle_Factura));
             this.brnCerrarSuperior = new System.Windows.Forms.PictureBox();
             this.textNumFactura = new System.Windows.Forms.TextBox();
@@ -80,6 +80,7 @@
             this.radio_cordoba = new System.Windows.Forms.RadioButton();
             this.radio_dolar = new System.Windows.Forms.RadioButton();
             this.lbl_simbolo = new System.Windows.Forms.Label();
+            this.cmb_Opcion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Lista_de_detallefactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,7 +91,7 @@
             this.brnCerrarSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.brnCerrarSuperior.Cursor = System.Windows.Forms.Cursors.Hand;
             this.brnCerrarSuperior.Image = global::Presentacion.Properties.Resources.Salir_blanco_login;
-            this.brnCerrarSuperior.Location = new System.Drawing.Point(1007, 4);
+            this.brnCerrarSuperior.Location = new System.Drawing.Point(1030, 4);
             this.brnCerrarSuperior.Name = "brnCerrarSuperior";
             this.brnCerrarSuperior.Size = new System.Drawing.Size(40, 28);
             this.brnCerrarSuperior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +105,7 @@
             this.textNumFactura.Enabled = false;
             this.textNumFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNumFactura.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textNumFactura.Location = new System.Drawing.Point(175, 35);
+            this.textNumFactura.Location = new System.Drawing.Point(160, 35);
             this.textNumFactura.Name = "textNumFactura";
             this.textNumFactura.Size = new System.Drawing.Size(162, 19);
             this.textNumFactura.TabIndex = 38;
@@ -114,7 +115,7 @@
             this.lblcodigo.AutoSize = true;
             this.lblcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcodigo.ForeColor = System.Drawing.Color.White;
-            this.lblcodigo.Location = new System.Drawing.Point(51, 35);
+            this.lblcodigo.Location = new System.Drawing.Point(45, 35);
             this.lblcodigo.Name = "lblcodigo";
             this.lblcodigo.Size = new System.Drawing.Size(92, 20);
             this.lblcodigo.TabIndex = 37;
@@ -127,7 +128,7 @@
             this.rectangleShape1.BorderColor = System.Drawing.Color.White;
             this.rectangleShape1.Location = new System.Drawing.Point(24, 22);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(970, 104);
+            this.rectangleShape1.Size = new System.Drawing.Size(993, 104);
             this.rectangleShape1.Click += new System.EventHandler(this.rectangleShape1_Click);
             // 
             // shapeContainer1
@@ -138,7 +139,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1051, 562);
+            this.shapeContainer1.Size = new System.Drawing.Size(1074, 611);
             this.shapeContainer1.TabIndex = 39;
             this.shapeContainer1.TabStop = false;
             // 
@@ -149,7 +150,7 @@
             this.rectangleShape2.BorderColor = System.Drawing.Color.White;
             this.rectangleShape2.Location = new System.Drawing.Point(22, 147);
             this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(973, 124);
+            this.rectangleShape2.Size = new System.Drawing.Size(996, 156);
             this.rectangleShape2.Click += new System.EventHandler(this.rectangleShape1_Click);
             // 
             // lblCliente
@@ -168,7 +169,7 @@
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpleado.ForeColor = System.Drawing.Color.White;
-            this.lblEmpleado.Location = new System.Drawing.Point(54, 91);
+            this.lblEmpleado.Location = new System.Drawing.Point(48, 91);
             this.lblEmpleado.Name = "lblEmpleado";
             this.lblEmpleado.Size = new System.Drawing.Size(85, 20);
             this.lblEmpleado.TabIndex = 42;
@@ -191,7 +192,7 @@
             this.textEmpleado.Enabled = false;
             this.textEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEmpleado.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textEmpleado.Location = new System.Drawing.Point(175, 92);
+            this.textEmpleado.Location = new System.Drawing.Point(160, 92);
             this.textEmpleado.Name = "textEmpleado";
             this.textEmpleado.Size = new System.Drawing.Size(162, 19);
             this.textEmpleado.TabIndex = 44;
@@ -216,7 +217,7 @@
             this.textFecha.Enabled = false;
             this.textFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textFecha.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textFecha.Location = new System.Drawing.Point(175, 64);
+            this.textFecha.Location = new System.Drawing.Point(160, 64);
             this.textFecha.Name = "textFecha";
             this.textFecha.Size = new System.Drawing.Size(162, 19);
             this.textFecha.TabIndex = 47;
@@ -226,7 +227,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(53, 62);
+            this.lblFecha.Location = new System.Drawing.Point(47, 62);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(105, 20);
             this.lblFecha.TabIndex = 46;
@@ -250,7 +251,7 @@
             this.lblProducto.AutoSize = true;
             this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProducto.ForeColor = System.Drawing.Color.White;
-            this.lblProducto.Location = new System.Drawing.Point(54, 167);
+            this.lblProducto.Location = new System.Drawing.Point(47, 167);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(77, 20);
             this.lblProducto.TabIndex = 49;
@@ -265,9 +266,9 @@
             this.cmbProducto.FormattingEnabled = true;
             this.cmbProducto.IntegralHeight = false;
             this.cmbProducto.ItemHeight = 20;
-            this.cmbProducto.Location = new System.Drawing.Point(175, 159);
+            this.cmbProducto.Location = new System.Drawing.Point(155, 159);
             this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(334, 28);
+            this.cmbProducto.Size = new System.Drawing.Size(391, 28);
             this.cmbProducto.TabIndex = 53;
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             this.cmbProducto.SelectionChangeCommitted += new System.EventHandler(this.cmbProducto_SelectionChangeCommitted);
@@ -280,7 +281,7 @@
             this.textCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCantidad.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textCantidad.Location = new System.Drawing.Point(175, 199);
+            this.textCantidad.Location = new System.Drawing.Point(155, 199);
             this.textCantidad.Name = "textCantidad";
             this.textCantidad.Size = new System.Drawing.Size(176, 22);
             this.textCantidad.TabIndex = 55;
@@ -293,7 +294,7 @@
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad.ForeColor = System.Drawing.Color.White;
-            this.lblCantidad.Location = new System.Drawing.Point(54, 200);
+            this.lblCantidad.Location = new System.Drawing.Point(47, 200);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(77, 20);
             this.lblCantidad.TabIndex = 54;
@@ -305,7 +306,7 @@
             this.textPrecio.Enabled = false;
             this.textPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPrecio.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textPrecio.Location = new System.Drawing.Point(841, 236);
+            this.textPrecio.Location = new System.Drawing.Point(870, 200);
             this.textPrecio.Name = "textPrecio";
             this.textPrecio.Size = new System.Drawing.Size(133, 22);
             this.textPrecio.TabIndex = 57;
@@ -316,7 +317,7 @@
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.ForeColor = System.Drawing.Color.White;
-            this.lblPrecio.Location = new System.Drawing.Point(54, 230);
+            this.lblPrecio.Location = new System.Drawing.Point(47, 230);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(65, 20);
             this.lblPrecio.TabIndex = 56;
@@ -328,7 +329,7 @@
             this.textMonto.Enabled = false;
             this.textMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMonto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textMonto.Location = new System.Drawing.Point(841, 168);
+            this.textMonto.Location = new System.Drawing.Point(591, 232);
             this.textMonto.Name = "textMonto";
             this.textMonto.Size = new System.Drawing.Size(133, 22);
             this.textMonto.TabIndex = 59;
@@ -338,11 +339,12 @@
             this.lblMonto.AutoSize = true;
             this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonto.ForeColor = System.Drawing.Color.White;
-            this.lblMonto.Location = new System.Drawing.Point(712, 167);
+            this.lblMonto.Location = new System.Drawing.Point(485, 232);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(58, 20);
             this.lblMonto.TabIndex = 58;
             this.lblMonto.Text = "Monto:";
+            this.lblMonto.Click += new System.EventHandler(this.lblMonto_Click);
             // 
             // lblNombreCliente
             // 
@@ -373,38 +375,39 @@
             this.Lista_de_detallefactura.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.Lista_de_detallefactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Lista_de_detallefactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Lista_de_detallefactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Lista_de_detallefactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Lista_de_detallefactura.ColumnHeadersHeight = 30;
             this.Lista_de_detallefactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Lista_de_detallefactura.EnableHeadersVisualStyles = false;
             this.Lista_de_detallefactura.GridColor = System.Drawing.Color.DarkCyan;
-            this.Lista_de_detallefactura.Location = new System.Drawing.Point(22, 306);
+            this.Lista_de_detallefactura.Location = new System.Drawing.Point(22, 334);
             this.Lista_de_detallefactura.Name = "Lista_de_detallefactura";
             this.Lista_de_detallefactura.ReadOnly = true;
             this.Lista_de_detallefactura.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Lista_de_detallefactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.Lista_de_detallefactura.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.Lista_de_detallefactura.Size = new System.Drawing.Size(814, 213);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Lista_de_detallefactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Lista_de_detallefactura.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.Lista_de_detallefactura.Size = new System.Drawing.Size(842, 219);
             this.Lista_de_detallefactura.TabIndex = 62;
+            this.Lista_de_detallefactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Lista_de_detallefactura_CellContentClick);
             // 
             // label9
             // 
@@ -413,7 +416,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(22, 282);
+            this.label9.Location = new System.Drawing.Point(20, 309);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 21);
             this.label9.TabIndex = 63;
@@ -430,7 +433,7 @@
             this.btnDetalleFactura.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnDetalleFactura.ForeColor = System.Drawing.SystemColors.Window;
             this.btnDetalleFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalleFactura.Location = new System.Drawing.Point(851, 308);
+            this.btnDetalleFactura.Location = new System.Drawing.Point(892, 334);
             this.btnDetalleFactura.Name = "btnDetalleFactura";
             this.btnDetalleFactura.Size = new System.Drawing.Size(129, 36);
             this.btnDetalleFactura.TabIndex = 64;
@@ -449,7 +452,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(851, 353);
+            this.btnEliminar.Location = new System.Drawing.Point(892, 379);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 36);
             this.btnEliminar.TabIndex = 65;
@@ -467,7 +470,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(851, 399);
+            this.btnGuardar.Location = new System.Drawing.Point(892, 425);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 36);
             this.btnGuardar.TabIndex = 66;
@@ -481,7 +484,7 @@
             this.text_Iva.Enabled = false;
             this.text_Iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_Iva.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.text_Iva.Location = new System.Drawing.Point(841, 201);
+            this.text_Iva.Location = new System.Drawing.Point(591, 200);
             this.text_Iva.Name = "text_Iva";
             this.text_Iva.Size = new System.Drawing.Size(133, 22);
             this.text_Iva.TabIndex = 68;
@@ -494,7 +497,7 @@
             this.check_Iva.AutoSize = true;
             this.check_Iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.check_Iva.ForeColor = System.Drawing.Color.White;
-            this.check_Iva.Location = new System.Drawing.Point(716, 200);
+            this.check_Iva.Location = new System.Drawing.Point(488, 199);
             this.check_Iva.Name = "check_Iva";
             this.check_Iva.Size = new System.Drawing.Size(62, 24);
             this.check_Iva.TabIndex = 71;
@@ -508,7 +511,7 @@
             this.text_subtotal.Enabled = false;
             this.text_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_subtotal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.text_subtotal.Location = new System.Drawing.Point(417, 528);
+            this.text_subtotal.Location = new System.Drawing.Point(417, 570);
             this.text_subtotal.Name = "text_subtotal";
             this.text_subtotal.Size = new System.Drawing.Size(129, 22);
             this.text_subtotal.TabIndex = 75;
@@ -518,7 +521,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(318, 528);
+            this.label1.Location = new System.Drawing.Point(318, 570);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 74;
@@ -530,7 +533,7 @@
             this.text_total.Enabled = false;
             this.text_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_total.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.text_total.Location = new System.Drawing.Point(707, 528);
+            this.text_total.Location = new System.Drawing.Point(707, 570);
             this.text_total.Name = "text_total";
             this.text_total.Size = new System.Drawing.Size(129, 22);
             this.text_total.TabIndex = 77;
@@ -540,7 +543,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(641, 528);
+            this.label2.Location = new System.Drawing.Point(641, 570);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 22);
             this.label2.TabIndex = 76;
@@ -551,9 +554,9 @@
             this.textBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBusqueda.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBusqueda.Location = new System.Drawing.Point(566, 164);
+            this.textBusqueda.Location = new System.Drawing.Point(587, 164);
             this.textBusqueda.Name = "textBusqueda";
-            this.textBusqueda.Size = new System.Drawing.Size(127, 22);
+            this.textBusqueda.Size = new System.Drawing.Size(136, 22);
             this.textBusqueda.TabIndex = 78;
             this.textBusqueda.TextChanged += new System.EventHandler(this.textBusqueda_TextChanged);
             this.textBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBusqueda_KeyPress);
@@ -561,9 +564,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(515, 155);
+            this.pictureBox1.Location = new System.Drawing.Point(556, 154);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
@@ -574,7 +577,7 @@
             this.textStock.Enabled = false;
             this.textStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.textStock.Location = new System.Drawing.Point(566, 197);
+            this.textStock.Location = new System.Drawing.Point(155, 266);
             this.textStock.Name = "textStock";
             this.textStock.Size = new System.Drawing.Size(127, 22);
             this.textStock.TabIndex = 81;
@@ -584,7 +587,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(506, 200);
+            this.label4.Location = new System.Drawing.Point(48, 268);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 80;
@@ -598,7 +601,7 @@
             this.cmb_precios.FormattingEnabled = true;
             this.cmb_precios.IntegralHeight = false;
             this.cmb_precios.ItemHeight = 20;
-            this.cmb_precios.Location = new System.Drawing.Point(175, 230);
+            this.cmb_precios.Location = new System.Drawing.Point(155, 230);
             this.cmb_precios.Name = "cmb_precios";
             this.cmb_precios.Size = new System.Drawing.Size(176, 28);
             this.cmb_precios.TabIndex = 82;
@@ -609,11 +612,11 @@
             this.lblprecio_iva.AutoSize = true;
             this.lblprecio_iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprecio_iva.ForeColor = System.Drawing.Color.White;
-            this.lblprecio_iva.Location = new System.Drawing.Point(713, 236);
+            this.lblprecio_iva.Location = new System.Drawing.Point(763, 201);
             this.lblprecio_iva.Name = "lblprecio_iva";
-            this.lblprecio_iva.Size = new System.Drawing.Size(118, 20);
+            this.lblprecio_iva.Size = new System.Drawing.Size(101, 20);
             this.lblprecio_iva.TabIndex = 83;
-            this.lblprecio_iva.Text = "Precio con IVA:";
+            this.lblprecio_iva.Text = "Precio + IVA:";
             this.lblprecio_iva.Visible = false;
             this.lblprecio_iva.Click += new System.EventHandler(this.label5_Click_1);
             // 
@@ -622,9 +625,9 @@
             this.textPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textPago.Location = new System.Drawing.Point(566, 233);
+            this.textPago.Location = new System.Drawing.Point(591, 265);
             this.textPago.Name = "textPago";
-            this.textPago.Size = new System.Drawing.Size(99, 22);
+            this.textPago.Size = new System.Drawing.Size(133, 22);
             this.textPago.TabIndex = 85;
             this.textPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPago_KeyPress);
             this.textPago.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textPago_KeyUp);
@@ -634,7 +637,7 @@
             this.lblPago.AutoSize = true;
             this.lblPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPago.ForeColor = System.Drawing.Color.White;
-            this.lblPago.Location = new System.Drawing.Point(506, 236);
+            this.lblPago.Location = new System.Drawing.Point(486, 264);
             this.lblPago.Name = "lblPago";
             this.lblPago.Size = new System.Drawing.Size(50, 20);
             this.lblPago.TabIndex = 84;
@@ -646,7 +649,7 @@
             this.textVuelto.Enabled = false;
             this.textVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textVuelto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textVuelto.Location = new System.Drawing.Point(91, 528);
+            this.textVuelto.Location = new System.Drawing.Point(91, 570);
             this.textVuelto.Name = "textVuelto";
             this.textVuelto.Size = new System.Drawing.Size(129, 22);
             this.textVuelto.TabIndex = 87;
@@ -656,7 +659,7 @@
             this.lblVuelto.AutoSize = true;
             this.lblVuelto.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVuelto.ForeColor = System.Drawing.Color.White;
-            this.lblVuelto.Location = new System.Drawing.Point(25, 527);
+            this.lblVuelto.Location = new System.Drawing.Point(25, 569);
             this.lblVuelto.Name = "lblVuelto";
             this.lblVuelto.Size = new System.Drawing.Size(68, 22);
             this.lblVuelto.TabIndex = 86;
@@ -695,17 +698,36 @@
             this.lbl_simbolo.AutoSize = true;
             this.lbl_simbolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_simbolo.ForeColor = System.Drawing.Color.White;
-            this.lbl_simbolo.Location = new System.Drawing.Point(673, 236);
+            this.lbl_simbolo.Location = new System.Drawing.Point(730, 266);
             this.lbl_simbolo.Name = "lbl_simbolo";
-            this.lbl_simbolo.Size = new System.Drawing.Size(0, 20);
+            this.lbl_simbolo.Size = new System.Drawing.Size(29, 20);
             this.lbl_simbolo.TabIndex = 91;
+            this.lbl_simbolo.Text = "C$";
+            // 
+            // cmb_Opcion
+            // 
+            this.cmb_Opcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
+            this.cmb_Opcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Opcion.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmb_Opcion.FormattingEnabled = true;
+            this.cmb_Opcion.IntegralHeight = false;
+            this.cmb_Opcion.ItemHeight = 18;
+            this.cmb_Opcion.Items.AddRange(new object[] {
+            "Codigo",
+            "Nombre"});
+            this.cmb_Opcion.Location = new System.Drawing.Point(730, 161);
+            this.cmb_Opcion.Name = "cmb_Opcion";
+            this.cmb_Opcion.Size = new System.Drawing.Size(134, 26);
+            this.cmb_Opcion.TabIndex = 92;
+            this.cmb_Opcion.Text = "Busqueda por:";
             // 
             // Detalle_Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(1051, 562);
+            this.ClientSize = new System.Drawing.Size(1074, 611);
+            this.Controls.Add(this.cmb_Opcion);
             this.Controls.Add(this.lbl_simbolo);
             this.Controls.Add(this.radio_dolar);
             this.Controls.Add(this.radio_cordoba);
@@ -813,5 +835,6 @@
         private System.Windows.Forms.RadioButton radio_cordoba;
         private System.Windows.Forms.RadioButton radio_dolar;
         private System.Windows.Forms.Label lbl_simbolo;
+        public System.Windows.Forms.ComboBox cmb_Opcion;
     }
 }

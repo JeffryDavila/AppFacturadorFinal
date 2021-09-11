@@ -38,6 +38,12 @@ namespace Presentacion
         bool error_stock = false;// variable para verificar que no se venda mas de la cantidad del stock
         int id_articulo_temp; // obtener el id articulo temporal para poder mostrar el mensaje de error
 
+        //variable para detectar si el total de la interfaz esta en 0
+        decimal auxiliador;
+
+        //contador de cantidad de productos en factura
+        int contador_articulo=0;
+
         public Detalle_Factura()
         {
             InitializeComponent();
@@ -111,12 +117,14 @@ namespace Presentacion
 
             if(check_Iva.Checked==true)
             {
+                
                 text_Iva.Text = "0,15";
                 decimal aux = Convert.ToDecimal(cmb_precios.Text) + (Convert.ToDecimal(cmb_precios.Text) * Convert.ToDecimal(text_Iva.Text));
                 textPrecio.Text = Convert.ToString(aux);
                 calcular_monto_iva();
                 textPrecio.Visible = true;
                 lblprecio_iva.Visible = true;
+             
             }
             else
             {
@@ -478,39 +486,45 @@ namespace Presentacion
         {
             if (!campos_vacios())
             {
-                if(FacturaCache.stock == 0)
-                {
-                    MessageBox.Show("El stock se encuentra en 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if(FacturaCache.stock >= Convert.ToInt32(textCantidad.Text))
-                {
-                    objfactura.Agregar_DetalleFactura(Convert.ToDecimal(textCantidad.Text), Convert.ToDecimal(cmb_precios.SelectedItem), Convert.ToDecimal(text_Iva.Text),
-                    Convert.ToDecimal(textMonto.Text), FacturaCache.idfactura, Convert.ToInt32(cmbProducto.SelectedValue));
-                    Subtotal += Monto_subtotal;
-                    Total += Convert.ToDecimal(textMonto.Text);
-                    //Total = (Subtotal + Convert.ToDecimal(Iva))- Convert.ToDecimal(Descuento);
-                    //Total = Subtotal;
-                    text_subtotal.Text = Convert.ToString(Subtotal);
-                    text_total.Text = Convert.ToString(Total);
-                    MessageBox.Show("Producto agregado a factura correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(contador_articulo<15)
+                {                
+                  if(FacturaCache.stock == 0)
+                  {
+                      MessageBox.Show("El stock se encuentra en 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+                  else if(FacturaCache.stock >= Convert.ToInt32(textCantidad.Text))
+                  {
+                       objfactura.Agregar_DetalleFactura(Convert.ToDecimal(textCantidad.Text), Convert.ToDecimal(cmb_precios.SelectedItem), Convert.ToDecimal(text_Iva.Text),
+                       Convert.ToDecimal(textMonto.Text), FacturaCache.idfactura, Convert.ToInt32(cmbProducto.SelectedValue));
+                       Subtotal += Monto_subtotal;
+                       Total += Convert.ToDecimal(textMonto.Text);
+                       //Total = (Subtotal + Convert.ToDecimal(Iva))- Convert.ToDecimal(Descuento);
+                       //Total = Subtotal;
+                       text_subtotal.Text = Convert.ToString(Subtotal);
+                       text_total.Text = Convert.ToString(Total);
+                       MessageBox.Show("Producto agregado a factura correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    //codigo para mostrar la suma de los productos agregados a la factura por Jeffry
-                    verificacion_stock_completa(Convert.ToInt32(cmbProducto.SelectedValue));
-                    Console.WriteLine("Verificacion de linea stock");
-                    foreach (Verificacion_producto ver_art in lista_verificacion)
-                    {                     
-                        Console.WriteLine(ver_art.v_idarticulo + " " + ver_art.v_stock + " " + ver_art.v_acumulador + "\n");
-                    }
-
-                    ListarDetalleFactura();
-                    LimpiarFormulario();
-                  
+                       //codigo para mostrar la suma de los productos agregados a la factura por Jeffry
+                       verificacion_stock_completa(Convert.ToInt32(cmbProducto.SelectedValue));
+                       Console.WriteLine("Verificacion de linea stock");
+                       foreach (Verificacion_producto ver_art in lista_verificacion)
+                       {                     
+                          Console.WriteLine(ver_art.v_idarticulo + " " + ver_art.v_stock + " " + ver_art.v_acumulador + "\n");
+                       }
+                       ListarDetalleFactura();
+                       LimpiarFormulario();
+                       contador_articulo++;
+                       Console.WriteLine("la cantidad de productos en la factura es:" + contador_articulo);
+                  }
+                  else
+                  {
+                    MessageBox.Show("La cantidad digitada es mayor a la del stock actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
                 }
                 else
                 {
-                    MessageBox.Show("La cantidad digitada es mayor a la del stock actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya no se puede agregar mas productos a la factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             else
             {
@@ -552,6 +566,7 @@ namespace Presentacion
                 ventana.btncategoria.Enabled = true;
                 ventana.btnDatos_user.Enabled = true;
                 ventana.btn_tasacambio.Enabled = true;
+                ventana.iconcerrar.Enabled = true;
             }
             else if(UserLoginCache.UserPrivilegios == Cargos.Administrador)
             {
@@ -565,10 +580,11 @@ namespace Presentacion
                 ventana.btnUsuario.Enabled = true;
                 ventana.btnDatos_user.Enabled = true;
                 ventana.btn_tasacambio.Enabled = true;
+                ventana.iconcerrar.Enabled = true;
             }
         }
 
-        private void textBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        public void buscar_x_nombre()
         {
             FacturaModel objFact = new FacturaModel();
             if (textBusqueda.Text == "")
@@ -586,6 +602,38 @@ namespace Presentacion
             obtener_precio_producto();
             check_Iva.Checked = false;
             calcular_monto();
+        }
+
+        public void buscar_x_codigo()
+        {
+            FacturaModel objFact = new FacturaModel();
+            if (textBusqueda.Text == "")
+            {
+                cmbProducto.DataSource = objFact.Listar_Producto();
+                cmbProducto.DisplayMember = "Fullproducto";
+                cmbProducto.ValueMember = "idarticulo";
+            }
+            else
+            {
+                cmbProducto.DataSource = objFact.Lista_de_producto_x_codigo(textBusqueda.Text);
+                cmbProducto.DisplayMember = "Fullproducto";
+                cmbProducto.ValueMember = "idarticulo";
+            }
+            obtener_precio_producto();
+            check_Iva.Checked = false;
+            calcular_monto();
+        }
+
+        private void textBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(cmb_Opcion.SelectedIndex==0)
+            {
+                buscar_x_codigo();
+            }
+            else if (cmb_Opcion.SelectedIndex==1)
+            {
+                buscar_x_nombre();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -613,7 +661,8 @@ namespace Presentacion
                         {
                             Console.WriteLine(ver_art.v_idarticulo + " " + ver_art.v_stock + " " + ver_art.v_acumulador + "\n");
                         }
-
+                        contador_articulo--;
+                        Console.WriteLine("la cantidad de productos en la factura es:" + contador_articulo);
                     }
                     catch (Exception ex)
                     {
@@ -627,6 +676,11 @@ namespace Presentacion
             {
                 MessageBox.Show("Debe Seleccionar una fila para Eliminar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void lblMonto_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void radio_cordoba_MouseClick(object sender, MouseEventArgs e)
@@ -645,45 +699,53 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(!campos_vacios_pago())
+            auxiliador = Convert.ToDecimal(text_total.Text);
+            if (!campos_vacios_pago() && auxiliador>0)
             {
-                if(error_stock==false)
+                if (MessageBox.Show("¿Estas seguro Finalizar la factura?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    if (radio_dolar.Checked == true)
+                    if (error_stock == false)
                     {
-                        textPago.Text = Convert.ToString(comp_pago_dolar);
+                        if (radio_dolar.Checked == true)
+                        {
+                            textPago.Text = Convert.ToString(comp_pago_dolar);
+                        }
+
+                        Formulario_Principal ventana = Owner as Formulario_Principal;
+                        Factura_Reporte hoja = new Factura_Reporte();
+                        Iva_descuento_vacio();
+                        estado = "Facturada";
+                        habilitar_botones(ventana);
+                        objfactura.Editar_factura(FacturaCache.idfactura, Subtotal, Total, Convert.ToDecimal(textPago.Text), Convert.ToDecimal(textVuelto.Text), estado, lbl_simbolo.Text);
+                        MessageBox.Show("Factura ha sido completada con exito", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objfactura.obtener_articulo_cantidad(FacturaCache.idfactura);
+                        objfactura.restar_articulo_stock();
+                        //ventana.Imagen_Fondo.BackColor = Color.White;
+                        DataTable dt = objfactura.Listar_Factura_completa(FacturaCache.idfactura);
+                        DataSet ds = new DataSet();
+                        ds.Tables.Add(dt);
+                        hoja.reportViewer1.LocalReport.DataSources[0].Value = ds.Tables[0];
+                        hoja.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;//todo el ancho de pagina
+                        ventana.AbrirFormPanel(hoja);
+                        //ventana.Imagen_Fondo.BackColor = Color.FromArgb(45, 66, 105);
                     }
-
-                    Formulario_Principal ventana = Owner as Formulario_Principal;
-                    Factura_Reporte hoja = new Factura_Reporte();
-                    Iva_descuento_vacio();
-                    estado = "Facturada";
-                    habilitar_botones(ventana);
-                    objfactura.Editar_factura(FacturaCache.idfactura, Subtotal, Total, Convert.ToDecimal(textPago.Text), Convert.ToDecimal(textVuelto.Text), estado, lbl_simbolo.Text);
-                    MessageBox.Show("Factura ha sido completada con exito", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    objfactura.obtener_articulo_cantidad(FacturaCache.idfactura);
-                    objfactura.restar_articulo_stock();
-
-                    DataTable dt = objfactura.Listar_Factura_completa(FacturaCache.idfactura);
-                    DataSet ds = new DataSet();
-                    ds.Tables.Add(dt);
-                    hoja.reportViewer1.LocalReport.DataSources[0].Value = ds.Tables[0];
-                    ventana.AbrirFormPanel(hoja);
-                }
-                else
-                {
-                    objfactura.mostra_nombre_articulo(id_articulo_temp);
-                    MessageBox.Show(FacturaCache.temp_nombre_producto + " Elimine una linea de este producto, ya que la suma de sus lineas sobrepasa el stock", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        objfactura.mostra_nombre_articulo(id_articulo_temp);
+                        MessageBox.Show(FacturaCache.temp_nombre_producto + " Elimine una linea de este producto, ya que la suma de sus lineas sobrepasa el stock", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
             }
             else
             {
-                MessageBox.Show("Campos Vuelto y Pagos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Campos vacios o campos en cero. Revise campo pago,vuelto,subtotal o total.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
+        private void Lista_de_detallefactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

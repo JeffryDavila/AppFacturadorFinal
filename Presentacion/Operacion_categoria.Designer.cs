@@ -161,6 +161,8 @@
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Operacion_categoria";
+            this.Load += new System.EventHandler(this.Operacion_categoria_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Operacion_categoria_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSuperior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

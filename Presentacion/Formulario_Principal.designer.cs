@@ -83,7 +83,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 672);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 685);
             this.MenuVertical.TabIndex = 0;
             // 
             // btn_tasacambio
@@ -151,11 +151,11 @@
             // lblcorreo
             // 
             this.lblcorreo.AutoSize = true;
-            this.lblcorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcorreo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcorreo.ForeColor = System.Drawing.Color.White;
             this.lblcorreo.Location = new System.Drawing.Point(85, 46);
             this.lblcorreo.Name = "lblcorreo";
-            this.lblcorreo.Size = new System.Drawing.Size(49, 17);
+            this.lblcorreo.Size = new System.Drawing.Size(44, 16);
             this.lblcorreo.TabIndex = 11;
             this.lblcorreo.Text = "Correo";
             // 
@@ -192,7 +192,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 632);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 645);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(250, 40);
             this.btnCerrarSesion.TabIndex = 9;
@@ -312,7 +312,7 @@
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(250, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1121, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(1178, 50);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -321,7 +321,7 @@
             this.iconRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("iconRestaurar.Image")));
-            this.iconRestaurar.Location = new System.Drawing.Point(1060, 4);
+            this.iconRestaurar.Location = new System.Drawing.Point(1117, 4);
             this.iconRestaurar.Name = "iconRestaurar";
             this.iconRestaurar.Size = new System.Drawing.Size(25, 25);
             this.iconRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,7 +335,7 @@
             this.iconMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("iconMaximizar.Image")));
-            this.iconMaximizar.Location = new System.Drawing.Point(1061, 4);
+            this.iconMaximizar.Location = new System.Drawing.Point(1118, 4);
             this.iconMaximizar.Name = "iconMaximizar";
             this.iconMaximizar.Size = new System.Drawing.Size(25, 25);
             this.iconMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -348,7 +348,7 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconMinimizar.Image")));
-            this.iconMinimizar.Location = new System.Drawing.Point(1032, 4);
+            this.iconMinimizar.Location = new System.Drawing.Point(1089, 4);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(25, 25);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -361,7 +361,7 @@
             this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
-            this.iconcerrar.Location = new System.Drawing.Point(1090, 4);
+            this.iconcerrar.Location = new System.Drawing.Point(1147, 4);
             this.iconcerrar.Name = "iconcerrar";
             this.iconcerrar.Size = new System.Drawing.Size(25, 25);
             this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -387,7 +387,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(250, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1121, 622);
+            this.panelContenedor.Size = new System.Drawing.Size(1178, 635);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
@@ -395,8 +395,8 @@
             // 
             this.Imagen_Fondo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Imagen_Fondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
-            this.Imagen_Fondo.Image = global::Presentacion.Properties.Resources.medicamento;
-            this.Imagen_Fondo.Location = new System.Drawing.Point(1271, 621);
+            this.Imagen_Fondo.Image = global::Presentacion.Properties.Resources.ICONO_DAV96;
+            this.Imagen_Fondo.Location = new System.Drawing.Point(1328, 634);
             this.Imagen_Fondo.Name = "Imagen_Fondo";
             this.Imagen_Fondo.Size = new System.Drawing.Size(100, 50);
             this.Imagen_Fondo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -407,7 +407,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 672);
+            this.ClientSize = new System.Drawing.Size(1428, 685);
             this.Controls.Add(this.Imagen_Fondo);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.BarraTitulo);
@@ -439,14 +439,12 @@
         private System.Windows.Forms.PictureBox btnMenuBar;
         private System.Windows.Forms.PictureBox iconMaximizar;
         private System.Windows.Forms.PictureBox iconMinimizar;
-        private System.Windows.Forms.PictureBox iconcerrar;
         private System.Windows.Forms.PictureBox iconRestaurar;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Label lblNombreUser;
         private System.Windows.Forms.Label lblcorreo;
         private System.Windows.Forms.Label lblprivilegio;
-        private System.Windows.Forms.PictureBox Imagen_Fondo;
         public System.Windows.Forms.Button btnProducto;
         public System.Windows.Forms.Button btnCompra;
         public System.Windows.Forms.Button btnCliente;
@@ -457,5 +455,7 @@
         public System.Windows.Forms.Button btnUsuario;
         public System.Windows.Forms.PictureBox btnDatos_user;
         public System.Windows.Forms.Button btn_tasacambio;
+        public System.Windows.Forms.PictureBox iconcerrar;
+        public System.Windows.Forms.PictureBox Imagen_Fondo;
     }
 }

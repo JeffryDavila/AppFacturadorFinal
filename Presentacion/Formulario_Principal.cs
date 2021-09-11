@@ -35,10 +35,13 @@ namespace Presentacion
         {
             if (UserLoginCache.UserPrivilegios == Cargos.Vendedor)
             {
-                btnProveedor.Enabled = false;
-                btnCompra.Enabled = false;
-                btnEmpleador.Enabled = false;
-                btnUsuario.Enabled = false;
+                btnProveedor.Visible = false;
+                btnCompra.Visible = false;
+                btnEmpleador.Visible = false;
+                btnUsuario.Visible = false;
+                
+                btncategoria.Location = new Point(0, 251);
+                btn_tasacambio.Location= new Point(0, 298);
             }
         }
 

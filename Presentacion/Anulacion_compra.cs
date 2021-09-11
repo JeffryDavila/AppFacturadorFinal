@@ -9,11 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
 using Domain;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
     public partial class Anulacion_compra : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsq, int wparam, int lparam);
+
         public int idpedido;
         public string estado;
 
@@ -70,6 +76,17 @@ namespace Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Anulacion_compra_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Anulacion_compra_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -15,7 +15,6 @@ namespace Presentacion
 {
     public partial class Ver_detalle_factura : Form
     {
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

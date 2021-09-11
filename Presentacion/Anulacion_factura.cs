@@ -9,11 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
 using Domain;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
     public partial class Anulacion_factura : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsq, int wparam, int lparam);
+
         public int idfactura;
         public string estado;
 
@@ -73,5 +79,10 @@ namespace Presentacion
             this.Close();
         }
 
+        private void Anulacion_factura_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

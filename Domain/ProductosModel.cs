@@ -54,6 +54,18 @@ namespace Domain
             return producto.ListarProducto_especificos();
         }
 
+        public DataTable Lista_de_producto_x_codigo(string codigo)
+        {
+            producto.Codigo_busqueda = codigo;
+            return producto.ListarProducto_x_codigo();
+        }
+
+        public DataTable Lista_de_producto_x_categoria(int idcategoria)
+        {
+            producto.Idcategoria_busqueda = idcategoria;
+            return producto.ListarProducto_x_categoria();
+        }
+
         public int obtenerIdproducto()
         {
             return producto.obtener_idproducto();

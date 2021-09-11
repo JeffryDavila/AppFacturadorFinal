@@ -38,6 +38,15 @@ namespace Presentacion
         public decimal aux_precio;
         public decimal aux_cantidad;
 
+        //variable para detectar si el total de la interfaz esta en 0
+        decimal auxiliador;
+
+        //contador de cantidad de productos en factura
+        int contador_articulo=0;
+
+        //auxiliador precio compra
+        decimal aux_precio_compra;
+
         public Detalle_Compra()
         {
             InitializeComponent();
@@ -112,6 +121,7 @@ namespace Presentacion
                 ventana.btncategoria.Enabled = true;
                 ventana.btnDatos_user.Enabled = true;
                 ventana.btn_tasacambio.Enabled = true;
+                ventana.iconcerrar.Enabled = true;
             }
             else if (UserLoginCache.UserPrivilegios == Cargos.Administrador)
             {
@@ -125,10 +135,11 @@ namespace Presentacion
                 ventana.btnUsuario.Enabled = true;
                 ventana.btnDatos_user.Enabled = true;
                 ventana.btn_tasacambio.Enabled = true;
+                ventana.iconcerrar.Enabled = true;
             }
         }
 
-        private void textBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        public void busqueda_x_Nombre()
         {
             ComprasModel objcompra = new ComprasModel();
             if (textBusqueda.Text == "")
@@ -142,8 +153,38 @@ namespace Presentacion
                 cmbProducto.DataSource = objcompra.Lista_de_producto_especifico(textBusqueda.Text);
                 cmbProducto.DisplayMember = "Fullproducto";
                 cmbProducto.ValueMember = "idarticulo";
-            }           
+            }
             calcular_monto();
+        }
+
+        public void busqueda_x_Codigo()
+        {
+            ComprasModel objcompra = new ComprasModel();
+            if (textBusqueda.Text == "")
+            {
+                cmbProducto.DataSource = objcompra.Listar_Producto();
+                cmbProducto.DisplayMember = "Fullproducto";
+                cmbProducto.ValueMember = "idarticulo";
+            }
+            else
+            {
+                cmbProducto.DataSource = objcompra.Lista_de_proveedor_x_codigo(textBusqueda.Text);
+                cmbProducto.DisplayMember = "Fullproducto";
+                cmbProducto.ValueMember = "idarticulo";
+            }
+            calcular_monto();
+        }
+
+        private void textBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(cmb_Opcion.SelectedIndex==0)
+            {
+                busqueda_x_Codigo();
+            }
+            else if(cmb_Opcion.SelectedIndex == 1)
+            {
+                busqueda_x_Nombre();
+            }
         }
 
         public void calcular_monto()
@@ -264,24 +305,35 @@ namespace Presentacion
 
         private void btnLineaPedido_Click(object sender, EventArgs e)
         {
-            if (!campos_vacios())
+            aux_precio_compra = Convert.ToDecimal(textPrecioCompra.Text);
+
+            if (!campos_vacios() && aux_precio_compra>0)
             {
-                try
+                if (contador_articulo < 15)
                 {
-                    objCompras.Agregar_LineaPedido(Convert.ToDecimal(textCantidad.Text), Convert.ToDecimal(textPrecioCompra.Text), Convert.ToDecimal(text_Iva.Text),
-                    Convert.ToDecimal(textMonto.Text), CompraCache.idcompra, Convert.ToInt32(cmbProducto.SelectedValue));
-                    Subtotal += Monto_subtotal;
-                    Total += Convert.ToDecimal(textMonto.Text);
-                    text_subtotal.Text = Convert.ToString(Subtotal);
-                    text_total.Text = Convert.ToString(Total);
-                    MessageBox.Show("Producto agregado a pedido correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ListarLineaPedido();
-                    LimpiarFormulario();
+                    try
+                    {
+                        objCompras.Agregar_LineaPedido(Convert.ToDecimal(textCantidad.Text), Convert.ToDecimal(textPrecioCompra.Text), Convert.ToDecimal(text_Iva.Text),
+                        Convert.ToDecimal(textMonto.Text), CompraCache.idcompra, Convert.ToInt32(cmbProducto.SelectedValue));
+                        Subtotal += Monto_subtotal;
+                        Total += Convert.ToDecimal(textMonto.Text);
+                        text_subtotal.Text = Convert.ToString(Subtotal);
+                        text_total.Text = Convert.ToString(Total);
+                        MessageBox.Show("Producto agregado a pedido correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ListarLineaPedido();
+                        LimpiarFormulario();
+                        contador_articulo++;
+                        Console.WriteLine("la cantidad de productos en la factura es:" + contador_articulo);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Generic Exception Handler: {ex}");
+                        MessageBox.Show("Error en el Formato de los precios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine($"Generic Exception Handler: {ex}");
-                    MessageBox.Show("Error en el Formato de los precios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya no se puede agregar mas productos a la cotizacion de compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -399,20 +451,24 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!campos_vacios_guardar())
+            auxiliador = Convert.ToDecimal(text_total.Text);
+            if (!campos_vacios_guardar() && auxiliador > 0)
             {
-                Formulario_Principal ventana = Owner as Formulario_Principal;
-                //Compras ventana_compras = new Compras();
-                estado = "Pendiente";
-                habilitar_botones(ventana);
-                objCompras.Editar_pedido(CompraCache.idcompra, Convert.ToDecimal(text_subtotal.Text), Convert.ToDecimal(text_total.Text),estado,lblsimbolo_total.Text);
-                MessageBox.Show("Cambios Realizados en la compra", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                //ventana.AbrirFormPanel(ventana_compras);
+                if (MessageBox.Show("¿Estas seguro Finalizar la cotizacion de compra?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    Formulario_Principal ventana = Owner as Formulario_Principal;
+                    //Compras ventana_compras = new Compras();
+                    estado = "Pendiente";
+                    habilitar_botones(ventana);
+                    objCompras.Editar_pedido(CompraCache.idcompra, Convert.ToDecimal(text_subtotal.Text), Convert.ToDecimal(text_total.Text), estado, lblsimbolo_total.Text);
+                    MessageBox.Show("Cambios Realizados en la compra", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    //ventana.AbrirFormPanel(ventana_compras);
+                }
             }
             else
             {
-                MessageBox.Show("Campos Subtotal o total vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Campos vacios o campos en cero. Revise campo subtotal o total", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -434,6 +490,8 @@ namespace Presentacion
                         text_subtotal.Text = Convert.ToString(Subtotal);
                         text_total.Text = Convert.ToString(Total);
                         MessageBox.Show("Se elimino correctamente", "Hecho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        contador_articulo--;
+                        Console.WriteLine("la cantidad de productos en la factura es:" + contador_articulo);
                     }
                     catch (Exception ex)
                     {

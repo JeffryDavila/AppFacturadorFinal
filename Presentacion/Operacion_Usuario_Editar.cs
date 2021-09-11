@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
     public partial class Operacion_Usuario_Editar : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsq, int wparam, int lparam);
+
         UsuarioModel objUsuario = new UsuarioModel();
         public string idusuario;
         public Operacion_Usuario_Editar()
@@ -69,5 +75,10 @@ namespace Presentacion
             }
         }
 
+        private void Operacion_Usuario_Editar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

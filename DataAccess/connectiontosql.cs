@@ -12,7 +12,7 @@ namespace DataAccess
         private readonly string connectionString;
         public ConnectionToSql()
         {
-            connectionString = "Server=DESKTOP-F3K5N8I\\MONICA10;DataBase= Factura_Inventario; integrated security= true";
+            connectionString = "Server=(local)\\MONICA10;DataBase= Factura_Inventario; integrated security= true";
         }
 
         protected SqlConnection GetConnection()

@@ -242,6 +242,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo_producto";
             this.Load += new System.EventHandler(this.Operacion_producto_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Operacion_producto_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lista_de_empleado = new System.Windows.Forms.DataGridView();
             this.Encabezado_listacliente = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,44 +47,44 @@
             // 
             // Lista_de_empleado
             // 
-            this.Lista_de_empleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Lista_de_empleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lista_de_empleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Lista_de_empleado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Lista_de_empleado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.Lista_de_empleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Lista_de_empleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Lista_de_empleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Lista_de_empleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Lista_de_empleado.ColumnHeadersHeight = 30;
             this.Lista_de_empleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Lista_de_empleado.EnableHeadersVisualStyles = false;
             this.Lista_de_empleado.GridColor = System.Drawing.Color.DarkCyan;
-            this.Lista_de_empleado.Location = new System.Drawing.Point(20, 110);
+            this.Lista_de_empleado.Location = new System.Drawing.Point(20, 152);
             this.Lista_de_empleado.Name = "Lista_de_empleado";
             this.Lista_de_empleado.ReadOnly = true;
             this.Lista_de_empleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Lista_de_empleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.Lista_de_empleado.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.Lista_de_empleado.Size = new System.Drawing.Size(593, 359);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Lista_de_empleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Lista_de_empleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.Lista_de_empleado.Size = new System.Drawing.Size(982, 327);
             this.Lista_de_empleado.TabIndex = 6;
             this.Lista_de_empleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Lista_de_empleado_CellContentClick);
             // 
@@ -93,7 +93,7 @@
             this.Encabezado_listacliente.AutoSize = true;
             this.Encabezado_listacliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Encabezado_listacliente.ForeColor = System.Drawing.Color.White;
-            this.Encabezado_listacliente.Location = new System.Drawing.Point(16, 79);
+            this.Encabezado_listacliente.Location = new System.Drawing.Point(16, 121);
             this.Encabezado_listacliente.Name = "Encabezado_listacliente";
             this.Encabezado_listacliente.Size = new System.Drawing.Size(175, 24);
             this.Encabezado_listacliente.TabIndex = 24;
@@ -116,9 +116,9 @@
             this.rectangleShape1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rectangleShape1.BorderColor = System.Drawing.Color.White;
             this.rectangleShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.rectangleShape1.Location = new System.Drawing.Point(637, 111);
+            this.rectangleShape1.Location = new System.Drawing.Point(504, 78);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(225, 194);
+            this.rectangleShape1.Size = new System.Drawing.Size(497, 62);
             // 
             // shapeContainer1
             // 
@@ -127,7 +127,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(985, 532);
+            this.shapeContainer1.Size = new System.Drawing.Size(1029, 548);
             this.shapeContainer1.TabIndex = 26;
             this.shapeContainer1.TabStop = false;
             // 
@@ -141,7 +141,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(672, 235);
+            this.btnEliminar.Location = new System.Drawing.Point(836, 95);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(154, 36);
             this.btnEliminar.TabIndex = 30;
@@ -159,7 +159,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEditar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(672, 189);
+            this.btnEditar.Location = new System.Drawing.Point(676, 95);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(154, 36);
             this.btnEditar.TabIndex = 29;
@@ -177,7 +177,7 @@
             this.btnNuevoCategoria.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnNuevoCategoria.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNuevoCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCategoria.Location = new System.Drawing.Point(672, 143);
+            this.btnNuevoCategoria.Location = new System.Drawing.Point(516, 95);
             this.btnNuevoCategoria.Name = "btnNuevoCategoria";
             this.btnNuevoCategoria.Size = new System.Drawing.Size(154, 36);
             this.btnNuevoCategoria.TabIndex = 28;
@@ -191,7 +191,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(705, 100);
+            this.label4.Location = new System.Drawing.Point(710, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 31;
@@ -207,7 +207,7 @@
             this.btnCerrarInferior.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnCerrarInferior.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCerrarInferior.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarInferior.Location = new System.Drawing.Point(754, 471);
+            this.btnCerrarInferior.Location = new System.Drawing.Point(815, 489);
             this.btnCerrarInferior.Name = "btnCerrarInferior";
             this.btnCerrarInferior.Size = new System.Drawing.Size(187, 36);
             this.btnCerrarInferior.TabIndex = 32;
@@ -222,7 +222,7 @@
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(964, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1008, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(17, 17);
             this.btnCerrar.TabIndex = 33;
@@ -234,7 +234,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(985, 532);
+            this.ClientSize = new System.Drawing.Size(1029, 548);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnCerrarInferior);
             this.Controls.Add(this.label4);

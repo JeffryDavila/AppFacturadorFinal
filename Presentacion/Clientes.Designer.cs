@@ -47,8 +47,8 @@
             // 
             // Lista_de_cliente
             // 
-            this.Lista_de_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Lista_de_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lista_de_cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Lista_de_cliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Lista_de_cliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
@@ -66,7 +66,7 @@
             this.Lista_de_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Lista_de_cliente.EnableHeadersVisualStyles = false;
             this.Lista_de_cliente.GridColor = System.Drawing.Color.DarkCyan;
-            this.Lista_de_cliente.Location = new System.Drawing.Point(24, 97);
+            this.Lista_de_cliente.Location = new System.Drawing.Point(27, 153);
             this.Lista_de_cliente.Name = "Lista_de_cliente";
             this.Lista_de_cliente.ReadOnly = true;
             this.Lista_de_cliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -84,7 +84,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.Lista_de_cliente.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.Lista_de_cliente.Size = new System.Drawing.Size(598, 402);
+            this.Lista_de_cliente.Size = new System.Drawing.Size(927, 353);
             this.Lista_de_cliente.TabIndex = 4;
             this.Lista_de_cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Lista_de_cliente_CellContentClick);
             // 
@@ -98,7 +98,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(691, 221);
+            this.btnEliminar.Location = new System.Drawing.Point(786, 97);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(154, 36);
             this.btnEliminar.TabIndex = 12;
@@ -116,7 +116,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEditar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(691, 175);
+            this.btnEditar.Location = new System.Drawing.Point(626, 97);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(154, 36);
             this.btnEditar.TabIndex = 11;
@@ -134,7 +134,7 @@
             this.btnNuevoCliente.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnNuevoCliente.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(691, 128);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(466, 97);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(154, 36);
             this.btnNuevoCliente.TabIndex = 10;
@@ -148,9 +148,9 @@
             this.rectangleShape1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.rectangleShape1.BorderColor = System.Drawing.Color.White;
             this.rectangleShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.rectangleShape1.Location = new System.Drawing.Point(648, 100);
+            this.rectangleShape1.Location = new System.Drawing.Point(448, 84);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(225, 194);
+            this.rectangleShape1.Size = new System.Drawing.Size(500, 61);
             // 
             // shapeContainer1
             // 
@@ -159,7 +159,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(985, 532);
+            this.shapeContainer1.Size = new System.Drawing.Size(985, 575);
             this.shapeContainer1.TabIndex = 13;
             this.shapeContainer1.TabStop = false;
             // 
@@ -187,7 +187,7 @@
             this.btnCerrarInferior.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnCerrarInferior.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCerrarInferior.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarInferior.Location = new System.Drawing.Point(746, 463);
+            this.btnCerrarInferior.Location = new System.Drawing.Point(767, 521);
             this.btnCerrarInferior.Name = "btnCerrarInferior";
             this.btnCerrarInferior.Size = new System.Drawing.Size(187, 36);
             this.btnCerrarInferior.TabIndex = 15;
@@ -201,22 +201,24 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(720, 88);
+            this.label4.Location = new System.Drawing.Point(660, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 22;
             this.label4.Text = "OPCIONES";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Encabezado_listacliente
             // 
             this.Encabezado_listacliente.AutoSize = true;
             this.Encabezado_listacliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Encabezado_listacliente.ForeColor = System.Drawing.Color.White;
-            this.Encabezado_listacliente.Location = new System.Drawing.Point(23, 64);
+            this.Encabezado_listacliente.Location = new System.Drawing.Point(23, 126);
             this.Encabezado_listacliente.Name = "Encabezado_listacliente";
             this.Encabezado_listacliente.Size = new System.Drawing.Size(134, 24);
             this.Encabezado_listacliente.TabIndex = 21;
             this.Encabezado_listacliente.Text = "Lista de cliente";
+            this.Encabezado_listacliente.Click += new System.EventHandler(this.Encabezado_listacliente_Click);
             // 
             // label1
             // 
@@ -235,7 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(985, 532);
+            this.ClientSize = new System.Drawing.Size(985, 575);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Encabezado_listacliente);
             this.Controls.Add(this.label1);

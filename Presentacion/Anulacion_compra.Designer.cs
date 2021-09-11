@@ -139,6 +139,8 @@
             this.Name = "Anulacion_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anulacion_compra";
+            this.Load += new System.EventHandler(this.Anulacion_compra_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Anulacion_compra_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

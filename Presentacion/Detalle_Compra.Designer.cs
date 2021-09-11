@@ -74,6 +74,7 @@
             this.radio_cordoba = new System.Windows.Forms.RadioButton();
             this.lblsimbolo_total = new System.Windows.Forms.Label();
             this.lblsimbolo_subtotal = new System.Windows.Forms.Label();
+            this.cmb_Opcion = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Lista_de_Lineapedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).BeginInit();
@@ -86,7 +87,7 @@
             this.rectangleShape1.BorderColor = System.Drawing.Color.White;
             this.rectangleShape1.Location = new System.Drawing.Point(32, 27);
             this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(957, 104);
+            this.rectangleShape1.Size = new System.Drawing.Size(973, 104);
             this.rectangleShape1.Click += new System.EventHandler(this.rectangleShape1_Click);
             // 
             // shapeContainer1
@@ -97,7 +98,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1051, 565);
+            this.shapeContainer1.Size = new System.Drawing.Size(1056, 572);
             this.shapeContainer1.TabIndex = 30;
             this.shapeContainer1.TabStop = false;
             // 
@@ -108,7 +109,7 @@
             this.rectangleShape2.BorderColor = System.Drawing.Color.White;
             this.rectangleShape2.Location = new System.Drawing.Point(30, 152);
             this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(959, 124);
+            this.rectangleShape2.Size = new System.Drawing.Size(976, 123);
             this.rectangleShape2.Click += new System.EventHandler(this.rectangleShape1_Click);
             // 
             // lblSubMenu
@@ -230,9 +231,9 @@
             this.textBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBusqueda.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBusqueda.Location = new System.Drawing.Point(610, 173);
+            this.textBusqueda.Location = new System.Drawing.Point(589, 174);
             this.textBusqueda.Name = "textBusqueda";
-            this.textBusqueda.Size = new System.Drawing.Size(207, 22);
+            this.textBusqueda.Size = new System.Drawing.Size(178, 22);
             this.textBusqueda.TabIndex = 82;
             this.textBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBusqueda_KeyPress);
             // 
@@ -349,7 +350,7 @@
             this.Lista_de_Lineapedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Lista_de_Lineapedido.EnableHeadersVisualStyles = false;
             this.Lista_de_Lineapedido.GridColor = System.Drawing.Color.DarkCyan;
-            this.Lista_de_Lineapedido.Location = new System.Drawing.Point(30, 308);
+            this.Lista_de_Lineapedido.Location = new System.Drawing.Point(30, 311);
             this.Lista_de_Lineapedido.Name = "Lista_de_Lineapedido";
             this.Lista_de_Lineapedido.ReadOnly = true;
             this.Lista_de_Lineapedido.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -367,7 +368,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.Lista_de_Lineapedido.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.Lista_de_Lineapedido.Size = new System.Drawing.Size(814, 219);
+            this.Lista_de_Lineapedido.Size = new System.Drawing.Size(814, 211);
             this.Lista_de_Lineapedido.TabIndex = 90;
             // 
             // btnGuardar
@@ -380,7 +381,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(871, 400);
+            this.btnGuardar.Location = new System.Drawing.Point(868, 404);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 36);
             this.btnGuardar.TabIndex = 93;
@@ -399,7 +400,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(871, 354);
+            this.btnEliminar.Location = new System.Drawing.Point(868, 358);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 36);
             this.btnEliminar.TabIndex = 92;
@@ -418,7 +419,7 @@
             this.btnLineaPedido.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnLineaPedido.ForeColor = System.Drawing.SystemColors.Window;
             this.btnLineaPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLineaPedido.Location = new System.Drawing.Point(871, 309);
+            this.btnLineaPedido.Location = new System.Drawing.Point(868, 313);
             this.btnLineaPedido.Name = "btnLineaPedido";
             this.btnLineaPedido.Size = new System.Drawing.Size(129, 36);
             this.btnLineaPedido.TabIndex = 91;
@@ -432,7 +433,7 @@
             this.text_total.Enabled = false;
             this.text_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_total.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.text_total.Location = new System.Drawing.Point(418, 536);
+            this.text_total.Location = new System.Drawing.Point(418, 534);
             this.text_total.Name = "text_total";
             this.text_total.Size = new System.Drawing.Size(129, 22);
             this.text_total.TabIndex = 97;
@@ -442,7 +443,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(352, 536);
+            this.label2.Location = new System.Drawing.Point(352, 534);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 22);
             this.label2.TabIndex = 96;
@@ -454,7 +455,7 @@
             this.text_subtotal.Enabled = false;
             this.text_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_subtotal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.text_subtotal.Location = new System.Drawing.Point(128, 536);
+            this.text_subtotal.Location = new System.Drawing.Point(128, 534);
             this.text_subtotal.Name = "text_subtotal";
             this.text_subtotal.Size = new System.Drawing.Size(129, 22);
             this.text_subtotal.TabIndex = 95;
@@ -464,7 +465,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 536);
+            this.label1.Location = new System.Drawing.Point(29, 534);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 94;
@@ -477,7 +478,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(30, 284);
+            this.label9.Location = new System.Drawing.Point(29, 287);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 21);
             this.label9.TabIndex = 98;
@@ -492,7 +493,7 @@
             this.btnNuevoProducto.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNuevoProducto.Image = global::Presentacion.Properties.Resources.Agregar;
-            this.btnNuevoProducto.Location = new System.Drawing.Point(826, 161);
+            this.btnNuevoProducto.Location = new System.Drawing.Point(915, 163);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(39, 34);
             this.btnNuevoProducto.TabIndex = 99;
@@ -502,9 +503,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(558, 164);
+            this.pictureBox1.Location = new System.Drawing.Point(553, 165);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(28, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 83;
             this.pictureBox1.TabStop = false;
@@ -514,7 +515,7 @@
             this.brnCerrarSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.brnCerrarSuperior.Cursor = System.Windows.Forms.Cursors.Hand;
             this.brnCerrarSuperior.Image = global::Presentacion.Properties.Resources.Salir_blanco_login;
-            this.brnCerrarSuperior.Location = new System.Drawing.Point(1009, 1);
+            this.brnCerrarSuperior.Location = new System.Drawing.Point(1014, 1);
             this.brnCerrarSuperior.Name = "brnCerrarSuperior";
             this.brnCerrarSuperior.Size = new System.Drawing.Size(40, 28);
             this.brnCerrarSuperior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -620,12 +621,30 @@
             this.lblsimbolo_subtotal.Size = new System.Drawing.Size(0, 20);
             this.lblsimbolo_subtotal.TabIndex = 107;
             // 
+            // cmb_Opcion
+            // 
+            this.cmb_Opcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
+            this.cmb_Opcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Opcion.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmb_Opcion.FormattingEnabled = true;
+            this.cmb_Opcion.IntegralHeight = false;
+            this.cmb_Opcion.ItemHeight = 18;
+            this.cmb_Opcion.Items.AddRange(new object[] {
+            "Codigo",
+            "Nombre"});
+            this.cmb_Opcion.Location = new System.Drawing.Point(773, 171);
+            this.cmb_Opcion.Name = "cmb_Opcion";
+            this.cmb_Opcion.Size = new System.Drawing.Size(134, 26);
+            this.cmb_Opcion.TabIndex = 108;
+            this.cmb_Opcion.Text = "Busqueda por:";
+            // 
             // Detalle_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(1051, 565);
+            this.ClientSize = new System.Drawing.Size(1056, 572);
+            this.Controls.Add(this.cmb_Opcion);
             this.Controls.Add(this.lblsimbolo_subtotal);
             this.Controls.Add(this.lblsimbolo_total);
             this.Controls.Add(this.radio_dolar);
@@ -722,5 +741,6 @@
         private System.Windows.Forms.RadioButton radio_cordoba;
         private System.Windows.Forms.Label lblsimbolo_total;
         private System.Windows.Forms.Label lblsimbolo_subtotal;
+        public System.Windows.Forms.ComboBox cmb_Opcion;
     }
 }

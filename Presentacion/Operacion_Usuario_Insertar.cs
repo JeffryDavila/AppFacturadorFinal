@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
     public partial class Operacion_Usuario_Insertar : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsq, int wparam, int lparam);
+
         UsuarioModel objuser = new UsuarioModel();
         public string iduser;
         public Operacion_Usuario_Insertar()
@@ -88,7 +94,7 @@ namespace Presentacion
             textContraseña.Text = "";
             textContraseñaConfirm.Text = "";
             textEmail.Text = "";
-            cmbPrivilegio.SelectedIndex = 0;
+            cmbPrivilegio.SelectedIndex = 1;
             cmbEmpleado.SelectedIndex = 0;
         }
 
@@ -108,6 +114,12 @@ namespace Presentacion
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Operacion_Usuario_Insertar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

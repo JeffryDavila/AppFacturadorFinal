@@ -237,6 +237,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Operacion_proveedor";
             this.Load += new System.EventHandler(this.Operacion_proveedor_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Operacion_proveedor_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.brnCerrarSuperior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

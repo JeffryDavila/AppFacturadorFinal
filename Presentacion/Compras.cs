@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Common.Cache;
 using Domain;
 
+
+
 namespace Presentacion
 {
     public partial class Compras : Form
@@ -107,13 +109,18 @@ namespace Presentacion
                         compras.Confirmar_pedido(Convert.ToInt32(idpedido));
                         MessageBox.Show("La compra ha sido confirmada", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        Formulario_Principal ventana = Owner as Formulario_Principal;
                         Compra_Factura hoja = new Compra_Factura();
                         DataTable dt = compras.Listar_Compra_completa(Convert.ToInt32(idpedido));
                         DataSet ds = new DataSet();
                         ds.Tables.Add(dt);
                         hoja.reportViewer1.LocalReport.DataSources[0].Value = ds.Tables[0];
-                        hoja.ShowDialog();
+                        hoja.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;//todo el ancho de pagina
+                        ventana.AbrirFormPanel(hoja);
 
+                        //hoja.ShowDialog();
+
+                        /*
                         if(cmb_Opcion.SelectedIndex == 0)
                         {
                             ListarPedido();
@@ -126,7 +133,7 @@ namespace Presentacion
                         {
                             ListarPedido_Rangos(Convert.ToString(Fecha_select1.Value.ToString("dd/MM/yyyy")), Fecha_select2.Value.ToString("dd/MM/yyyy"));
                         }
-
+                        */
                     }
                 }
                 else if(estado== "Confirmada")
@@ -266,6 +273,32 @@ namespace Presentacion
             }
         }
 
+        private void btn_vista_imprimir_Click(object sender, EventArgs e)
+        {
+            if (Lista_de_compras.SelectedRows.Count > 0)
+            {
+                estado = Lista_de_compras.CurrentRow.Cells["Estado"].Value.ToString();
+                if (estado == "Confirmada")
+                {
+                    idpedido = Lista_de_compras.CurrentRow.Cells["ID"].Value.ToString();
+                    Compra_Factura hoja = new Compra_Factura();
+                    DataTable dt = compras.Listar_Compra_completa(Convert.ToInt32(idpedido));
+                    DataSet ds = new DataSet();
+                    ds.Tables.Add(dt);
+                    hoja.reportViewer1.LocalReport.DataSources[0].Value = ds.Tables[0];
+                    hoja.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;//todo el ancho de pagina
+                    hoja.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Solo se pueden mostrar la vista de Impresion de las compras confirmadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

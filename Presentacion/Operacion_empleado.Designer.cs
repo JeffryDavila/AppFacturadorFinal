@@ -263,6 +263,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Operacion_empleado";
             this.Load += new System.EventHandler(this.Operacion_empleado_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Operacion_empleado_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSuperior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
